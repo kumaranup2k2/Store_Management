@@ -1,0 +1,298 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body styling - Futuristic Blue-Black Theme */
+body {
+  margin: 0;
+  background: linear-gradient(270deg, #000000, #000428, #004e92, #000000);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Animate background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Content container */
+.content {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 40px 30px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+.content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #dcdcdc;
+  font-weight: 500;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  flex: 1;
+  margin: 0 8px;
+  padding: 14px 0;
+  background: #fff;
+  color: #004e92;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  box-shadow: 0 6px 12px rgba(0, 78, 146, 0.3);
+}
+
+.buttons button:first-child {
+  margin-left: 0;
+}
+.buttons button:last-child {
+  margin-right: 0;
+}
+
+.buttons button:hover {
+  background-color: #004e92;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 78, 146, 0.6);
+}
+
+/* Modal overlay */
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Modal content */
+.modal-content {
+  background: linear-gradient(270deg, #000000, #000428, #004e92, #000000);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  padding: 30px 30px 40px 30px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  position: relative;
+  color: #333;
+  transform: translateY(-10px);
+  opacity: 0;
+  animation: modalFadeIn 0.35s forwards ease;
+}
+
+/* Animate modal fade in */
+@keyframes modalFadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Reset modal-content when modal is hidden */
+.modal:not(.show) .modal-content {
+  animation: none;
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 26px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.close:hover {
+  color: #004e92;
+}
+
+/* Modal heading */
+.modal-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-align: center;
+  color: #fcfdfd;
+}
+
+/* Inputs */
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="password"] {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 1.8px solid #ddd;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-color 0.3s ease;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.modal-content input::placeholder {
+  color: #999;
+}
+
+.modal-content input:focus {
+  outline: none;
+  border-color: #004e92;
+  background-color: #eaf0fc;
+  box-shadow: 0 0 8px rgba(0, 78, 146, 0.4);
+}
+
+/* Submit button */
+.modal-content button[type="submit"] {
+  width: 100%;
+  padding: 16px 0;
+  background-color: #004e92;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 78, 146, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+  background-color: #00264d;
+  box-shadow: 0 10px 25px rgba(0, 38, 77, 0.8);
+}
+
+/* Toggle text */
+.toggle-text {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  color: #ccc;
+  font-weight: 600;
+  text-align: center;
+}
+
+.toggle-text a {
+  color: #66aaff;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.toggle-text a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Social login */
+.social-login {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.social-login p {
+  margin-bottom: 14px;
+  font-weight: 600;
+  color: #888;
+}
+
+.social-login button {
+  margin: 0 8px 0 0;
+  padding: 10px 22px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  user-select: none;
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
+}
+
+.social-login button:last-child {
+  margin-right: 0;
+}
+
+/* Social brand colors */
+.social-login .google {
+  background-color: #db4437;
+  box-shadow: 0 6px 12px #db4437;
+}
+
+.social-login .facebook {
+  background-color: #3b5998;
+  box-shadow: 0 6px 12px #3b5998;
+}
+
+.social-login .twitter {
+  background-color: #1da1f2;
+  box-shadow: 0 6px 12px #1da1f2;
+}
+
+.social-login button:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .content {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons button {
+    margin: 8px 0;
+  }
+}

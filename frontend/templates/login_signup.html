@@ -1,0 +1,75 @@
+<!-- 
+Subject: store management (login page)
+Created By: Anup Kumar
+Created On: 01.june.2025
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Store Assistant</title>
+  <link rel="stylesheet" href="/frontend/static/css/login_signup.css" />
+</head>
+<body>
+
+  <div class="content">
+    <h2>Welcome to Store Assistant</h2>
+    <p>Har Product Pe Nazar, Har Click Pe Control</p>
+
+    <!-- Login / Sign Up Buttons -->
+    <div class="buttons">
+      <button onclick="openModal('loginModal')">Login</button>
+      <button onclick="openModal('signupModal')">Sign Up</button>
+    </div>
+
+    <!-- Login page -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('loginModal')">&times;</span>
+        <h3>Login</h3>
+        <input type="text" placeholder="Email or Username" />
+        <input type="password" placeholder="Password" />
+        <button type="submit">Login</button>
+
+        <p class="toggle-text">Don't have an account? 
+          <a href="#" onclick="switchModal('loginModal','signupModal')">Sign Up</a>
+        </p>
+
+        <div class="social-login">
+          <p>Or login with:</p>
+          <button class="google">Google</button>
+          <button class="facebook">Facebook</button>
+          <button class="twitter">X</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign-Up page -->
+    <div id="signupModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('signupModal')">&times;</span>
+        <h3>Sign Up</h3>
+        <input type="text" placeholder="Full Name" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button type="submit">Sign Up</button>
+
+        <p class="toggle-text">Already have an account? 
+          <a href="#" onclick="switchModal('signupModal','loginModal')">Login</a>
+        </p>
+
+        <div class="social-login">
+          <p>Or sign up with:</p>
+          <button class="google">Google</button>
+          <button class="facebook">Facebook</button>
+          <button class="twitter">X</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/frontend/static/js/login_signup.js"></script>
+</body>
+</html>
