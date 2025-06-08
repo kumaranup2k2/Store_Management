@@ -1,6 +1,6 @@
 StoreAssistantProject
 │
-├── frontend/               # Frontend files (static and templates)
+├── frontend/
 │   ├── static/
 │   │    ├── css/           # CSS files
 │   │    │    ├── style.css
@@ -16,4 +16,3 @@ StoreAssistantProject
 │   │    ├── sale_product.html
 │   │    ├── product_detail.html
 │   │    ├── update_quantity.html
-│   │    └── exit.html      # Optional
