@@ -1,0 +1,19 @@
+StoreAssistantProject/
+│
+├── frontend/               # Frontend files (static and templates)
+│   ├── static/
+│   │    ├── css/           # CSS files
+│   │    │    ├── style.css
+│   │    │    └── add_product.css
+│   │    ├── js/            # JavaScript files (if any)
+│   │    │    └── script.js
+│   │    └── images/        # Store your images here (like your profile pic)
+│   │
+│   ├── templates/          # HTML pages
+│   │    ├── index.html     # Home page
+│   │    ├── add_product.html
+│   │    ├── delete_product.html
+│   │    ├── sale_product.html
+│   │    ├── product_detail.html
+│   │    ├── update_quantity.html
+│   │    └── exit.html      # Optional
