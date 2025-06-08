@@ -20,6 +20,8 @@ function stopResize() {
   document.removeEventListener("mouseup", stopResize);
 }
 
+
+
 // Chatbot Toggle-------------------------------------------------------------
 window.addEventListener("DOMContentLoaded", () => {
   // Elements
@@ -41,12 +43,12 @@ window.addEventListener("DOMContentLoaded", () => {
     chatbotContainer.style.display = "none";
   });
 
-  // Send message 
+  // Send message on button click
   sendBtn.addEventListener("click", () => {
     sendMessage();
   });
 
-  // Send message on Enter 
+  // Send message on Enter key
   inputField.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -66,18 +68,18 @@ window.addEventListener("DOMContentLoaded", () => {
   // Sample Q&A Database
   const qaDatabase = [
     { pattern: /hi|hello|hey|namaste|hola|good (morning|afternoon|evening)|hloo|hii|hiii|hiiii|hiiiii|heloo|hlooo|hlloo|hlo/, response: "Namaste! Main hoon Store Assistant. Aapko kis cheez mein madad chahiye?" },
-    { pattern: /thank|thanks|thankyou/, response: "Koi baat nahi! 😇 Agar aur kuch puchhna ho to zaroor batayein." },
-    { pattern: /bye|goodbye|see you|tata/, response: "Alvida! 🤗 Phir milte hain. Aapka din shubh ho!" },
+    { pattern: /thank|thanks/, response: "Koi baat nahi! 😇 Agar aur kuch puchhna ho to zaroor batayein." },
+    { pattern: /bye|goodbye|see you/, response: "Alvida! 🤗 Phir milte hain. Aapka din shubh ho!" },
     { pattern: /help|support|assist|guide/, response: "Main yeh sab mein help kar sakta hoon: product add karna, delete karna, update karna, ya dekhna. Batayein kya karna hai?" },
     { pattern: /add.*product|new.*product/, response: "Naya product add karne ke liye 'Add Product' page par jaakar form bhar dijiye." },
-    { pattern: /delete.*product|remove.*product|product delete kaise kre|delete/, response: "Kisi product ko delete karne ke liye 'Delete Product' page par jaakar uska ID daaliye." },
-    { pattern: /update.*quantity|edit.*quantity|product update kaise kre|update/, response: "Product quantity update karne ke liye 'Product Quantity Update' page par jaakar details fill kariye." },
-    { pattern: /view.*product|product.*detail|list.*product|show.*products|product ka detail kaise nikale|view/, response: "Sare products dekhne ke liye 'Product Detail' page par jaaiye. Wahan sab info milega." },
+    { pattern: /delete.*product|remove.*product/, response: "Kisi product ko delete karne ke liye 'Delete Product' page par jaakar uska ID daaliye." },
+    { pattern: /update.*quantity|edit.*quantity/, response: "Product quantity update karne ke liye 'Product Quantity Update' page par jaakar details fill kariye." },
+    { pattern: /view.*product|product.*detail|list.*product|show.*products/, response: "Sare products dekhne ke liye 'Product Detail' page par jaaiye. Wahan sab info milega." },
     { pattern: /price|cost|rate/, response: "Product ka price aapko uske detail page pe milega." },
     { pattern: /contact|customer care/, response: "Contact no.- +91 62xxxxxxxx and Mail id- kumaranup2k2@gmail.com and Instagram- _kumaranup_ and X-kumaranup2k2" }
   ];
 
-  // Generate chatbot response here--------
+  // Generate chatbot response
   function sendMessage() {
     const text = inputField.value.trim();
     if (!text) return;
@@ -88,7 +90,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const lowerText = text.toLowerCase();
     let replyFound = false;
 
-    // Jokes ----------------
+    // Joke feature
     if (/joke|mazak|funny|hansi|ek joke suna do/.test(lowerText)) {
       const jokes = [
         "Ek aadmi doctor ke paas gaya, bola: Doctor saab, mujhe yaadash ki problem hai. Doctor: Kab se? Aadmi: Kab se kya?",
@@ -190,7 +192,7 @@ window.addEventListener("DOMContentLoaded", () => {
       replyFound = true;
     }
 
-    // Normal Q&A check agar joke nahi mila ----------------
+    // Normal Q&A check agar joke nahi mila
     if (!replyFound) {
       for (let qa of qaDatabase) {
         if (qa.pattern.test(lowerText)) {
@@ -201,12 +203,12 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // agar kuch match na ho -----------------
+    // Fallback agar kuch match na ho
     if (!replyFound) {
       appendMessage("Mujhe samajh nahi aaya 😅. Aap Add, Delete, Update ya View Product ke baare mein puchh sakte hain.", "bot");
     }
   }
 
-  // first message
+  // Initial greeting
   appendMessage("Hi! 😊 Main hoon aapka Store Assistant. Kaise madad kar sakta hoon?", "bot");
 });
