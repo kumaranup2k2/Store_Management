@@ -1,13 +1,13 @@
-StoreAssistantProject/
+StoreAssistantProject
 │
 ├── frontend/               # Frontend files (static and templates)
 │   ├── static/
 │   │    ├── css/           # CSS files
 │   │    │    ├── style.css
-│   │    │    └── add_product.css
-│   │    ├── js/            # JavaScript files (if any)
-│   │    │    └── script.js
-│   │    └── images/        # Store your images here (like your profile pic)
+│   │    │    └── login_signup.css
+│   │    ├── js/            # JavaScript files 
+│   │         └── script.js
+│   │         └── login_signup.js
 │   │
 │   ├── templates/          # HTML pages
 │   │    ├── index.html     # Home page
